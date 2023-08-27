@@ -10,8 +10,8 @@ We utilized a publicly available dataset of wrist X-ray images which we later pr
 Please refer to the dataset's documentation for usage terms, licensing, and any specific instructions provided by the dataset creators.  
 (You can instead use the measurements found in the "Processed Data" folder as explained below)
 ### Packages required
-
-
+Install the required packages using the command:  
+`pip install torch torchvision pandas numpy tqdm Pillow wandb`
 ## how to use
 ### MNIST
 ### article

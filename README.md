@@ -17,7 +17,8 @@ Our project consists of three distinct code parts, each contained in its respect
 1. **GI_MINST**: This folder contains the code for reproducing the results of [this article](https://pubmed.ncbi.nlm.nih.gov/34624000/).
 2. **Wrist_original_architecture**: In this folder, you'll find the code where we adapted the architecture from the article to work with wrist fracture images.
 3. **Wrist_transfer_learning**: This folder holds the code for the third part, where we applied transfer learning to the wrist fracture dataset.
-please download/clone the folder you are interested in. In addition, download the file train_and_test.py and for the second and third folders also the file preprocessing_wrist.py.
+   
+Please download/clone the folder you are interested in. In addition, download/clone the file **train_and_test.py** and for the second and third folders also the file **preprocessing_wrist.py**.
 
 ## How to use
 ### MNIST

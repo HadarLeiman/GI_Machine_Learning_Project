@@ -12,6 +12,14 @@ Please refer to the dataset's documentation for usage terms, licensing, and any 
 ### Packages required
 Install the required packages using the command:  
 `pip install torch torchvision pandas numpy tqdm Pillow wandb`
+### Code Parts
+Our project consists of three distinct code parts, each contained in its respective folder:  
+1. **GI_MINST**: This folder contains the code for reproducing the results of [this article](https://pubmed.ncbi.nlm.nih.gov/34624000/).
+2. **Wrist_original_architecture**: In this folder, you'll find the code where we adapted the architecture from the article to work with wrist fracture images.
+3. **Wrist_transfer_learning**: This folder holds the code for the third part, where we applied transfer learning to the wrist fracture dataset.
+
+
+
 ## how to use
 ### MNIST
 ### article

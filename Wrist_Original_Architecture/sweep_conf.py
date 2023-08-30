@@ -17,9 +17,9 @@ sweep_configuration = {
     'metric': {'goal': 'minimize', 'name': 'Test accuracy'},
     'parameters':
         {
-            'lr': {'values': [0.00001, 0.00002, 0.00003]},
+            'lr': {'values': [0.00001, 0.0001, 0.001]},
             'epoch': {'values': [10, 20, 50, 100]},
-            'shape': {'values': [(32, 64), (64, 128), (128, 256)]},
+            'shape': {'values': ["64_128", "256_512", "1024_2048"]},
             'num_of_measurements': {'values': [512, 1024, 2048, 4096, 8192]},
             'batch_size': {'values': [16, 32, 64, 128]},
         }

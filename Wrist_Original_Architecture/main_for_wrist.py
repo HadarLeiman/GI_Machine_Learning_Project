@@ -17,10 +17,12 @@ def main_wrist(config):
 
     num_of_measurements = config.num_of_measurements
     # generate the data ### use this line only if you want to generate the data
-    preprocessing_wrist.generate_data("Processed_Dataset/", num_of_measurements, config.shape)
+    # preprocessing_wrist.generate_data("Processed_Dataset/", num_of_measurements, config.shape)
 
     # create the dataset
-    wrist_gi_dataset = GI_Wrist("Processed_Dataset/new_dataset.csv")
+    path_ending = str(config.num_of_measurements) + "_" + config.shape + ".csv"
+    csv_path = "Processed_Dataset/new_dataset_" + path_ending
+    wrist_gi_dataset = GI_Wrist(csv_path)
 
     # split the data to train and test
     number_of_samples = len(wrist_gi_dataset)
@@ -36,7 +38,7 @@ def main_wrist(config):
     # split the dataset into train and test sets
     train_set, test_set = torch.utils.data.random_split(subset_dataset, [train_len, test_len])
 
-    ### from here on it is the same as in main.py ###
+    ### from here on it is the same as in main.py in GI_MNIST ###
 
     # create a data loader for the train set
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=batch_size, shuffle=True)

@@ -21,9 +21,32 @@ Our project consists of three distinct code parts, each contained in its respect
 Please download/clone the folder you are interested in. In addition, download/clone the file **train_and_test.py** and for the second and third folders also the file **preprocessing_wrist.py**.
 
 ## How to use
-### MNIST
-### article
-### transfer learning
+### First Part - GI MNIST
+Run the main.py file.
+### Second and third Part - Wrist original architecture & transfer learning
+##### preprocess
+Use the preprocessing_wrist.py file to create processed data in the form of GI measurements from the X-ray image dataset to use by the model.
+Pass:
+   - Number of Ghost Imaging measurements
+   - Resize size applied to the data during preprocessing
+   - Path to the original dataset
+##### Running with wandb
+If you'd like to run the project using WandB for experiment tracking, execute the `sweep_conf.py` script in the Wrist_original_architecture folder or `main_sweep` in the Wrist_transfer_learning folder. This will initiate training runs with different configurations, and the results will be logged to your WandB account.
+##### Running with Custom Configuration
+To run the project with a specific configuration, follow these steps:
+1. Open the `main_for_wrist.py` file in Wrist_original_architecture folder or `model_pipeline.py` in Wrist_transfer_learning folder.
+2. Locate the `main` function in `main_for_wrist.py` or the `model_pipeline` function in `model_pipeline.py`.
+3. Pass your desired configuration. The configuration should include:
+   - Learning rate
+   - Number of epochs
+   - Resize size applied to the data during preprocessing
+   - Number of Ghost Imaging measurements
+   - Batch size (in `main`)
+   - model name (in `model_pipeline`)
+   - num_of_layers_unfreeze (in `model_pipeline`)
+
+   For example: `main((0.001, 10, (64, 128), 10, 32))` or `model_pipeline((5, 2, ResNet, 0.0001, 512, 64_128))`
+This approach allows you to fine-tune the project's parameters according to your preferences. Feel free to experiment with different configurations to observe their effects on the training process and results.
 
 ## examples
 

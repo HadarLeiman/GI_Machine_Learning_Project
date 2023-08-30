@@ -62,5 +62,5 @@ For a more tailored approach to your experiments, follow these steps:
    - Model name (in `model_pipeline.py`)
    - Number of layers to unfreeze (in `model_pipeline.py`)
 
-   For example: `main((0.001, 10, (64, 128), 10, 32))` or `model_pipeline((5, 2, ResNet, 0.0001, 512, (64, 128)))`
-   *Note: Ensure the combination of Resize size for preprocessing and Number of Ghost Imaging measurements exists. Create it during the preprocessing step.*
+   For example: `main((0.001, 10, (64, 128), 10, 32))` or `model_pipeline((5, 2, ResNet, 0.0001, 512, (64, 128)))`  
+   **Note:** Ensure the combination of Resize size for preprocessing and Number of Ghost Imaging measurements exists. Create it during the preprocessing step.

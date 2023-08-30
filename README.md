@@ -6,9 +6,12 @@ for patients undergoing X-ray evaluations.
 
 ## Installation
 ### Dataset
-We utilized a publicly available dataset of wrist X-ray images which we later preprocessed to generate GI measurements for training and evaluating our neural network model. You can download the dataset from [here](https://www.nature.com/articles/s41597-022-01328-z#Sec9).  
-Please refer to the dataset's documentation for usage terms, licensing, and any specific instructions provided by the dataset creators.  
-(You can instead use the measurements found in the "Processed Data" folder as explained below)
+We utilized a publicly available dataset of wrist X-ray images which we later preprocessed to generate GI measurements for training and evaluating our neural network model. You can download the dataset from [here](https://www.nature.com/articles/s41597-022-01328-z#Sec9).
+
+Please refer to the dataset's documentation for usage terms, licensing, and any specific instructions provided by the dataset creators.
+
+- Alternatively, you can use the measurements found in the "Processed Data" folder as explained below.
+
 ### Packages required
 Install the required packages using the command:  
 `pip install torch torchvision pandas numpy tqdm Pillow wandb`
@@ -19,7 +22,7 @@ Our project consists of three distinct code parts, each contained in its respect
 3. **Wrist_transfer_learning**: This folder holds the code for the third part, where we applied transfer learning to the wrist fracture dataset.
    
 Please download/clone the folder you are interested in. In addition, download/clone the file `train_and_test.py`.  
-For the second and third folders also download/clone `preprocessing_wrist.py` or use the Processed Data folder instead (reshape = 64*128, measurments = 1024).
+For the second and third folders also download/clone `preprocessing_wrist.py` or use the Processed Data folder instead (created using reshape = 64*128, measurements = 1024).
 
 ## How to use
 ### First Part - GI MNIST

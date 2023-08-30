@@ -22,31 +22,45 @@ Please download/clone the folder you are interested in. In addition, download/cl
 
 ## How to use
 ### First Part - GI MNIST
-Run the main.py file.
-### Second and third Part - Wrist original architecture & transfer learning
-##### preprocess
-Use the preprocessing_wrist.py file to create processed data in the form of GI measurements from the X-ray image dataset to use by the model.
-Pass:
+
+To run the first part of the project, follow these steps:
+
+1. Open the `main.py` file located in the `GI_MNIST` folder.
+2. Within the `main.py` file, you can experiment with various parameters directly (learning rate, number of epochs, number of GI measurements and more)
+
+Additionally, in the `data_preprocessing.py` file, you have the option to switch between using the MNIST dataset and the Fashion MNIST dataset.
+
+### Second and Third Part - Wrist Original Architecture & Transfer Learning
+
+#### Preprocessing
+To generate processed data in the form of GI measurements from the X-ray image dataset for model usage, follow these steps:
+1. Use the `preprocessing_wrist.py` file located in the main folder.
+2. Pass the following parameters:
    - Number of Ghost Imaging measurements
-   - Resize size applied to the data during preprocessing
+   - Resize size for preprocessing
    - Path to the original dataset
-##### Running with wandb
-If you'd like to run the project using WandB for experiment tracking, execute the `sweep_conf.py` script in the Wrist_original_architecture folder or `main_sweep` in the Wrist_transfer_learning folder. This will initiate training runs with different configurations, and the results will be logged to your WandB account.
-##### Running with Custom Configuration
-To run the project with a specific configuration, follow these steps:
-1. Open the `main_for_wrist.py` file in Wrist_original_architecture folder or `model_pipeline.py` in Wrist_transfer_learning folder.
+
+#### Running with WandB
+If you prefer to utilize WandB for experiment tracking, you have two options:
+
+- In the `Wrist_original_architecture` folder, execute the `sweep_conf.py` script.
+- In the `Wrist_transfer_learning` folder, execute the `main_sweep.py` script.
+
+Both options initiate training runs with various configurations, and the results will be logged to your WandB account.
+
+#### Running with Custom Configuration
+For a more tailored approach to your experiments, follow these steps:
+
+1. Open the `main_for_wrist.py` file in the `Wrist_original_architecture` folder or the `model_pipeline.py` file in the `Wrist_transfer_learning` folder.
 2. Locate the `main` function in `main_for_wrist.py` or the `model_pipeline` function in `model_pipeline.py`.
-3. Pass your desired configuration. The configuration should include:
+3. Specify your desired configuration, including:
    - Learning rate
    - Number of epochs
-   - Resize size applied to the data during preprocessing
+   - Resize size for preprocessing
    - Number of Ghost Imaging measurements
-   - Batch size (in `main`)
-   - model name (in `model_pipeline`)
-   - num_of_layers_unfreeze (in `model_pipeline`)
+   - Batch size (in `main_for_wrist.py`)
+   - Model name (in `model_pipeline.py`)
+   - Number of layers to unfreeze (in `model_pipeline.py`)
 
-   For example: `main((0.001, 10, (64, 128), 10, 32))` or `model_pipeline((5, 2, ResNet, 0.0001, 512, 64_128))`
-This approach allows you to fine-tune the project's parameters according to your preferences. Feel free to experiment with different configurations to observe their effects on the training process and results.
-
-## examples
-
+   For example: `main((0.001, 10, (64, 128), 10, 32))` or `model_pipeline((5, 2, ResNet, 0.0001, 512, (64, 128)))`
+   *Note: Ensure the combination of Resize size for preprocessing and Number of Ghost Imaging measurements exists. Create it during the preprocessing step.*

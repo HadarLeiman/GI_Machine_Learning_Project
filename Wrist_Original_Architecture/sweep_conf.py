@@ -6,7 +6,7 @@ wandb.login()
 
 
 def main():
-    wandb.init(project='first-sweep-try')
+    wandb.init()
     test_acc = main_wrist(wandb.config)
     wandb.log({"Test accuracy": test_acc})
 
@@ -14,7 +14,7 @@ def main():
 # 2: Define the search space
 sweep_configuration = {
     'method': 'grid',
-    'metric': {'goal': 'minimize', 'name': 'Test accuracy'},
+    'metric': {'goal': 'maximize', 'name': 'Test accuracy'},
     'parameters':
         {
             'lr': {'values': [0.00001, 0.0001, 0.001]},
@@ -26,5 +26,5 @@ sweep_configuration = {
 }
 
 # 3: Start the sweep
-sweep_id = wandb.sweep(sweep=sweep_configuration, project='first-sweep-try')
+sweep_id = wandb.sweep(sweep=sweep_configuration, project='Wrist_GI_Original_Architecture')
 wandb.agent(sweep_id, function=main)

@@ -29,7 +29,7 @@ sweep_configuration = {
 }
 
 # 3: Start the sweep
-sweep_id = wandb.sweep(sweep=sweep_configuration, project='dif_nets_with_dif_shape_and_measurements')
+sweep_id = wandb.sweep(sweep=sweep_configuration, project='Wrist_GI_Transfer_Learning')
 wandb.agent(sweep_id, function=main)
 
 # save the contents of accuracy_data dataframe to a file

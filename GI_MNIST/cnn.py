@@ -17,7 +17,7 @@ class ConvolutionalNet(nn.Module):
         self.bn2 = nn.BatchNorm2d(32)
         self.do = nn.Dropout()
         self.fc3 = nn.Linear(2048, 512)
-        self.fc4 = nn.Linear(512, 2)
+        self.fc4 = nn.Linear(512, 10)
 
     def forward(self, x):
         x = torch.flatten(x, 1)

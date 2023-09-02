@@ -1,4 +1,5 @@
 # Fracture Detection using Ghost Imaging and Neural Networks
+#### Authors: Noa Tal & Hadar Leiman  
 Welcome to our project focusing on Fracture Detection through the innovative combination of Ghost Imaging (GI) techniques and advanced machine learning.
 In this project, we explore the potential of using machine learning algorithms to identify bone fractures from X-rays captured using the Ghost imaging method.
 Our goal is to investigate whether this approach can contribute to accurate medical diagnoses while minimizing radiation exposure, offering a safer alternative
@@ -21,6 +22,7 @@ Our project consists of three distinct code parts, each contained in its respect
 2. **Wrist_original_architecture**: In this folder, you'll find the code where we adapted the architecture from the article to work with wrist fracture images.
 3. **Wrist_transfer_learning**: This folder holds the code for the third part, where we applied transfer learning to the wrist fracture dataset.
    
+Each folder contains a main file, a Dataset class file and a Neural Network class file.  
 Please download/clone the folder you are interested in. In addition, download/clone the file `train_and_test.py`.  
 For the second and third folders also download/clone `preprocessing_wrist.py` or use the Processed Data folder instead (created using reshape = 64*128, measurements = 1024).
 

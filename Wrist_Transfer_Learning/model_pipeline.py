@@ -76,7 +76,7 @@ def make_loaders(given_batch_size, config):
     # create the dataset
     path_ending = str(config.num_of_measurements) + "_" + config.reshape_size + ".csv"
     # /home/sharonlabgpu/noa_and_hadar/wrist_project/wrist_project/wrist_dataset
-    csv_path = "Processed_Dataset/new_dataset_" + path_ending
+    csv_path = "../Processed_Dataset/new_dataset_" + path_ending
     wrist_gi_dataset = GI_Wrist(csv_path, transform=transform)
 
     # split the data to train and test

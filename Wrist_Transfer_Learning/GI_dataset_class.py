@@ -17,12 +17,9 @@ class GI_Wrist(Dataset):
     def __getitem__(self, index):
         # read the csv file at the given index
         measurements = pd.read_csv(self.data['path'][index]).values
-        # # convert the measurements to a tensor of type float32
-        # measurements = torch.tensor(measurements, dtype=torch.float32)
         # transform the measurements if needed
         if self.transform:
             measurements = self.transform(measurements)
-        # measurements = measurements.repeat(3, 1, 1)
         # if cuda is available, move the measurements to cuda
         if torch.cuda.is_available():
             measurements = measurements.cuda()

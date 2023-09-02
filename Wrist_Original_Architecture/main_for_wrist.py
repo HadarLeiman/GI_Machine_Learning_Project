@@ -1,12 +1,9 @@
-# preprocess the wrist images and create a dataset
-
 # import the required libraries
 import torch
 from torch.utils.data import Dataset
 from torch import nn
 from GI_Wrist import GI_Wrist
 from wrist_cnn import ConvolutionalNet
-import preprocessing_wrist
 from train_and_test import train, test
 
 
@@ -21,7 +18,7 @@ def main_wrist(config):
 
     # create the dataset
     path_ending = str(config.num_of_measurements) + "_" + config.shape + ".csv"
-    csv_path = "Processed_Dataset/new_dataset_" + path_ending
+    csv_path = "../Processed_Dataset/new_dataset_" + path_ending
     wrist_gi_dataset = GI_Wrist(csv_path)
 
     # split the data to train and test

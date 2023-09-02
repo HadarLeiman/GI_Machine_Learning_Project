@@ -6,9 +6,12 @@ for patients undergoing X-ray evaluations.
 
 ## Installation
 ### Dataset
-We utilized a publicly available dataset of wrist X-ray images which we later preprocessed to generate GI measurements for training and evaluating our neural network model. You can download the dataset from [here](https://www.nature.com/articles/s41597-022-01328-z#Sec9).  
-Please refer to the dataset's documentation for usage terms, licensing, and any specific instructions provided by the dataset creators.  
-(You can instead use the measurements found in the "Processed Data" folder as explained below)
+We utilized a publicly available dataset of wrist X-ray images which we later preprocessed to generate GI measurements for training and evaluating our neural network model. You can download the dataset from [here](https://www.nature.com/articles/s41597-022-01328-z#Sec9).
+
+Please refer to the dataset's documentation for usage terms, licensing, and any specific instructions provided by the dataset creators.
+
+- Alternatively, you can use the measurements found in the "Processed Data" folder as explained below.
+
 ### Packages required
 Install the required packages using the command:  
 `pip install torch torchvision pandas numpy tqdm Pillow wandb`
@@ -18,7 +21,8 @@ Our project consists of three distinct code parts, each contained in its respect
 2. **Wrist_original_architecture**: In this folder, you'll find the code where we adapted the architecture from the article to work with wrist fracture images.
 3. **Wrist_transfer_learning**: This folder holds the code for the third part, where we applied transfer learning to the wrist fracture dataset.
    
-Please download/clone the folder you are interested in. In addition, download/clone the file **train_and_test.py** and for the second and third folders also the file **preprocessing_wrist.py**.
+Please download/clone the folder you are interested in. In addition, download/clone the file `train_and_test.py`.  
+For the second and third folders also download/clone `preprocessing_wrist.py` or use the Processed Data folder instead (created using reshape = 64*128, measurements = 1024).
 
 ## How to use
 ### First Part - GI MNIST
@@ -63,4 +67,4 @@ For a more tailored approach to your experiments, follow these steps:
    - Number of layers to unfreeze (in `model_pipeline.py`)
 
    For example: `main((0.001, 10, (64, 128), 10, 32))` or `model_pipeline((5, 2, ResNet, 0.0001, 512, (64, 128)))`  
-   **Note:** Ensure the combination of Resize size for preprocessing and Number of Ghost Imaging measurements exists. Create it during the preprocessing step.
+   **Note:** Ensure the combination of Resize size for preprocessing and Number of Ghost Imaging measurements exists (create it during the preprocessing step).

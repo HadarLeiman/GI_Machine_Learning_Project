@@ -1,4 +1,5 @@
 # Fracture Detection using Ghost Imaging and Neural Networks
+#### Authors: Noa Tal & Hadar Leiman  
 Welcome to our project focusing on Fracture Detection through the innovative combination of Ghost Imaging (GI) techniques and advanced machine learning.
 In this project, we explore the potential of using machine learning algorithms to identify bone fractures from X-rays captured using the Ghost imaging method.
 Our goal is to investigate whether this approach can contribute to accurate medical diagnoses while minimizing radiation exposure, offering a safer alternative
